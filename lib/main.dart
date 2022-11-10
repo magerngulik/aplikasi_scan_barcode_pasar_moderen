@@ -9,8 +9,8 @@ void main() async {
 
   // Widget mainView = const DashboardView();
   // Widget mainView = const NavigatorView();
-  Widget mainView = const ExampleDemoView();
-  // Widget mainView = const HomeView();
+  // Widget mainView = const ExampleDemoView();
+  Widget mainView = const HomeView();
 
   if (FirebaseAuth.instance.currentUser != null) {
     mainView = Container();

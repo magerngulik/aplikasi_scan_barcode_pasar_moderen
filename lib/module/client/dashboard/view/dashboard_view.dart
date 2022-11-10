@@ -16,44 +16,45 @@ class DashboardView extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Dashboard"),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  controller.update();
-                },
-                icon: const Icon(
-                  Icons.refresh,
-                  size: 24.0,
-                ),
-              ),
-              IconButton(
-                onPressed: () => controller.deleteAllData(),
-                icon: const Icon(
-                  Icons.delete_forever_outlined,
-                  size: 24.0,
-                ),
-              ),
-              // IconButton(
-              //   onPressed: () {
-              //     controller.addDataUser();
-              //   },
-              //   icon: const Icon(
-              //     Icons.data_array,
-              //     size: 24.0,
-              //   ),
-              // ),
-              IconButton(
-                onPressed: () {
-                  // controller.getUser("003");
-                  Get.to(const ScannerView());
-                },
-                icon: const Icon(
-                  Icons.add,
-                  size: 24.0,
-                ),
-              ),
-            ],
+            backgroundColor: Colors.blue,
+            title: const Text("Daftar Anggota Pasar Modern Meranti"),
+            // actions: [
+            //   IconButton(
+            //     onPressed: () {
+            //       controller.update();
+            //     },
+            //     icon: const Icon(
+            //       Icons.refresh,
+            //       size: 24.0,
+            //     ),
+            //   ),
+            //   IconButton(
+            //     onPressed: () => controller.deleteAllData(),
+            //     icon: const Icon(
+            //       Icons.delete_forever_outlined,
+            //       size: 24.0,
+            //     ),
+            //   ),
+            //   IconButton(
+            //     onPressed: () {
+            //       controller.addDataUser();
+            //     },
+            //     icon: const Icon(
+            //       Icons.data_array,
+            //       size: 24.0,
+            //     ),
+            //   ),
+            //   IconButton(
+            //     onPressed: () {
+            //       // controller.getUser("003");
+            //       Get.to(const ScannerView());
+            //     },
+            //     icon: const Icon(
+            //       Icons.add,
+            //       size: 24.0,
+            //     ),
+            //   ),
+            // ],
           ),
           body: SingleChildScrollView(
             child: Padding(

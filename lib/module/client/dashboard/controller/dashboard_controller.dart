@@ -9,11 +9,18 @@ class DashboardController extends GetxController {
   addDataUser() async {
     for (var i = 0; i < UserServices.dataUser.length; i++) {
       var item = UserServices.dataUser[i];
-      debugPrint("idUser: 00${i + 3}");
-      debugPrint("nama_user: ${item['name_user']}");
 
+      int number = i + 1;
+      String id = "";
+      if (number >= 10) {
+        id = "0$number";
+      } else {
+        id = "00$number";
+      }
+      debugPrint("id: $id");
+      debugPrint("number: $number");
       await FirebaseFirestore.instance.collection("data_user").add({
-        "id_user": "00${i + 1}",
+        "id_user": id,
         "name_user": "${item['name_user']}",
         "ttl_user": "${item['ttl_user']}",
         "alamat_user": "${item['alamat_user']}",

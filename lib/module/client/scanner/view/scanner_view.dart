@@ -15,6 +15,7 @@ class ScannerView extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.blue,
             title: const Text("Scanner"),
           ),
           body: SingleChildScrollView(

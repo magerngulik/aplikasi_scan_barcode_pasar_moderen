@@ -7,6 +7,59 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget noServiceFount = Scaffold(
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Layanan ini belum tersedia silahkan kembali",
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              height: 300.0,
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    "https://i.ibb.co/gPQJ2mb/no-data.png",
+                  ),
+                  fit: BoxFit.fitHeight,
+                ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    16.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Kembali"),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
     return GetBuilder<HomeController>(
       init: HomeController(),
       builder: (controller) {
@@ -29,7 +82,7 @@ class HomeView extends StatelessWidget {
             "background": "",
             "color1": Colors.yellow,
             "color2": Colors.green,
-            "ontap": Container()
+            "ontap": noServiceFount
           },
           {
             "image":
@@ -47,7 +100,7 @@ class HomeView extends StatelessWidget {
             "background": "",
             "color1": Colors.pink,
             "color2": Colors.purple,
-            "ontap": Container()
+            "ontap": noServiceFount
           },
         ];
 
@@ -79,7 +132,7 @@ class HomeView extends StatelessWidget {
                       CircleAvatar(
                         radius: 20.0,
                         backgroundImage: NetworkImage(
-                          "https://i.ibb.co/PGv8ZzG/me.jpg",
+                          "https://i.ibb.co/X5PQ9L4/image.png",
                         ),
                       ),
                     ],
@@ -158,8 +211,7 @@ class HomeView extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        "${items['image']}" ??
-                                            "https://i.ibb.co/3pPYd14/freeban.jpg",
+                                        "${items['image']}",
                                       ),
                                       fit: BoxFit.fitWidth,
                                     ),
