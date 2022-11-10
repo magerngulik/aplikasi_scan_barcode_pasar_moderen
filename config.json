@@ -1,0 +1,11 @@
+{
+    "modules": [
+        "client/dashboard",
+        "client/navigator",
+        "client/look_data",
+        "client/scanner",
+        "client/home",
+        "admin/admin_dashboard",
+        "demo/example_demo"
+    ]
+}
